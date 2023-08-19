@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="calc.css" />
+  </head>
+
+  <div class="box">
+    <div class="display">
+      <input type="text" placeholder="0" size="16" id="result" />
+    </div>
+    <div class="keys">
+      <p>
+        <input
+          type="button"
+          class="button orange"
+          value="="
+          onclick="operant()"
+        />
+        <input
+          type="button"
+          class="button orange"
+          value="DEL"
+          onclick="DELETE()"
+        />
+      </p>
+      <p>
+        <input
+          type="button"
+          class="button orange"
+          value="7"
+       
+          onclick='display("7")'
+        />
+        <input
+          type="button"
+          class="button orange"
+         
+          value="8"
+          onclick='display("8")'
+        />
+        <input
+          type="button"
+          class="button orange"
+         
+          value="9"
+          onclick='display("9")'
+        />
+        <input
+          type="button"
+          class="button pink"
+         
+          value="*"
+          onclick='display("*")'
+        />
+      </p>
+      <p>
+        <input
+          type="button"
+          class="button orange"
+          
+          value="4"
+          onclick='display("4")'
+        />
+        <input
+          type="button"
+          class="button orange"
+          
+          value="5"
+          onclick='display("5")'
+        />
+        <input
+          type="button"
+          class="button orange"
+          
+          value="6"
+          onclick='display("6")'
+        />
+        <input
+          type="button"
+          class="button pink"
+          
+          value="-"
+          onclick='display("-")'
+        />
+      </p>
+      <p>
+        <input
+          type="button"
+          class="button orange"
+         
+          value="1"
+          onclick='display("1")'
+        />
+        <input
+          type="button"
+          class="button orange"
+         
+          value="2"
+          onclick='display("2")'
+        />
+        <input
+          type="button"
+          class="button orange"
+          
+          value="3"
+          onclick='display("3")'
+        />
+        <input
+          type="button"
+          class="button pink"
+         
+          value="+"
+          onclick='display("+")'
+        />
+      </p>
+      <p>
+        <input
+          type="button"
+          class="button orange"
+         
+          value="0"
+          onclick='display("0")'
+        />
+        <input
+          type="button"
+          class="button orange"
+          value="."
+         
+          onclick='display(".")'
+        />
+        <input
+          type="button"
+          class="button orange"
+          value="C"
+          onclick='clr("")'
+        />
+        <input
+          type="button"
+          class="button pink"
+          value="/"
+          onclick='display("/")'
+        />
+      </p>
+    </div>
+  </div>
+  <script>
+    var show = document.getElementById("result");
+
+    function display(number) {
+      show.value += number;
+      if (show.value == " ") {
+        show.value = "";
+      }
+    }
+
+    function clr() {
+      show.value = "";
+    }
+
+    function operant() {
+      var result = eval(show.value);
+      show.value = result;
+    }
+    function DELETE() {
+      show.value = show.value.slice(0, -1);
+    }
+  </script>
+</html>
